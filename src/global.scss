@@ -35,3 +35,28 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+.centrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carta{
+  width: 500px;
+  margin: auto;
+  margin-top: 15%;
+}
+
+.cartaPeque{
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1 1 calc(16.66% - 20px);
+  margin-left: 15px;
+}
+
+.cartaContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+}

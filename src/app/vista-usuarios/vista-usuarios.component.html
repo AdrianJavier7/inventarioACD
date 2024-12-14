@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+
+<ion-content>
+  <ion-title style="text-align: center; margin-top: 20px; margin-bottom: 30px">Usuarios</ion-title>
+  <ion-button class="centrar">Agregar un usuario</ion-button>
+
+  <!-- Tabla de Usuarios usando ion-grid -->
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2" class="ion-text-center"><strong>ID</strong></ion-col>
+      <ion-col size="3" class="ion-text-center"><strong>Nombre</strong></ion-col>
+      <ion-col size="3" class="ion-text-center"><strong>Email</strong></ion-col>
+      <ion-col size="2" class="ion-text-center"><strong>Contraseña</strong></ion-col>
+      <ion-col size="2" class="ion-text-center"><strong>Rol</strong></ion-col>
+    </ion-row>
+
+    <!-- Aquí van los datos de los usuarios -->
+    <ion-row>
+      <ion-col size="2" class="ion-text-center">1</ion-col>
+      <ion-col size="3" class="ion-text-center">Juan Pérez</ion-col>
+      <ion-col size="3" class="ion-text-center">juan&#64;email.com</ion-col>
+      <ion-col size="2" class="ion-text-center">*******</ion-col>
+      <ion-col size="2" class="ion-text-center">Admin</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="ion-text-center">2</ion-col>
+      <ion-col size="3" class="ion-text-center">Ana Gómez</ion-col>
+      <ion-col size="3" class="ion-text-center">ana&#64;email.com</ion-col>
+      <ion-col size="2" class="ion-text-center">*******</ion-col>
+      <ion-col size="2" class="ion-text-center">Usuario</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="ion-text-center">3</ion-col>
+      <ion-col size="3" class="ion-text-center">Pedro Sánchez</ion-col>
+      <ion-col size="3" class="ion-text-center">pedro&#64;email.com</ion-col>
+      <ion-col size="2" class="ion-text-center">*******</ion-col>
+      <ion-col size="2" class="ion-text-center">Usuario</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

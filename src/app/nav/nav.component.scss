@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos uniformemente */
+  padding: 0; /* Sin padding extra */
+  margin: 0; /* Sin márgenes adicionales */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+ion-list {
+  display: flex;
+  flex-direction: row; /* Alinea los ítems en una fila horizontal */
+  justify-content: space-between; /* Espaciado uniforme entre los ítems */
+  width: 100%; /* Asegura que ocupe todo el ancho del nav */
+  padding: 0; /* Sin padding extra */
+  margin: 0; /* Sin márgenes */
+}
+
+ion-item {
+  flex: 1; /* Cada ítem ocupa el mismo ancho */
+  text-align: center; /* Centra el texto dentro del ítem */
+  padding: 15px 0; /* Ajusta la altura del ítem */
+  text-decoration: none; /* Quita el subrayado (si es un enlace) */
+  color: white; /* Color del texto */
+}
+
+ion-item:hover {
+  color: #1a65eb;
+  --color: #1a65eb;
+  cursor: pointer; /* Cambia el cursor a pointer */
+}

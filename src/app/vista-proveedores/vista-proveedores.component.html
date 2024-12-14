@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+
+<ion-content>
+  <ion-title style="text-align: center; margin-top: 20px; margin-bottom: 30px">Proveedores</ion-title>
+  <ion-button class="centrar">Agregar un proveedor</ion-button>
+
+  <!-- Tabla de Proveedores usando ion-grid -->
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2" class="ion-text-center"><strong>ID</strong></ion-col>
+      <ion-col size="3" class="ion-text-center"><strong>Nombre</strong></ion-col>
+      <ion-col size="3" class="ion-text-center"><strong>Email</strong></ion-col>
+      <ion-col size="2" class="ion-text-center"><strong>Teléfono</strong></ion-col>
+      <ion-col size="2" class="ion-text-center"><strong>Dirección</strong></ion-col>
+    </ion-row>
+
+    <!-- Aquí van los datos de los proveedores -->
+    <ion-row>
+      <ion-col size="2" class="ion-text-center">1</ion-col>
+      <ion-col size="3" class="ion-text-center">Proveedor A</ion-col>
+      <ion-col size="3" class="ion-text-center">proveedora&#64;email.com</ion-col>
+      <ion-col size="2" class="ion-text-center">(123) 456-7890</ion-col>
+      <ion-col size="2" class="ion-text-center">Calle Ficticia 123</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="ion-text-center">2</ion-col>
+      <ion-col size="3" class="ion-text-center">Proveedor B</ion-col>
+      <ion-col size="3" class="ion-text-center">proveedorb&#64;email.com</ion-col>
+      <ion-col size="2" class="ion-text-center">(098) 765-4321</ion-col>
+      <ion-col size="2" class="ion-text-center">Avenida Central 456</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="ion-text-center">3</ion-col>
+      <ion-col size="3" class="ion-text-center">Proveedor C</ion-col>
+      <ion-col size="3" class="ion-text-center">proveedorc&#64;email.com</ion-col>
+      <ion-col size="2" class="ion-text-center">(555) 123-9876</ion-col>
+      <ion-col size="2" class="ion-text-center">Ruta 56, km 7</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

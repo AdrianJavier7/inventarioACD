@@ -1,0 +1,28 @@
+ion-grid {
+  margin-top: 20px;
+}
+
+ion-row {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+ion-col {
+  padding: 5px 0;
+}
+
+ion-col strong {
+  font-weight: bold;
+  color: #3b5ca7;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  ion-col {
+    font-size: 14px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+  }
+
+  ion-col {
+    padding: 8px; /* Reduce el padding para mejorar el uso de espacio */
+  }
+}
