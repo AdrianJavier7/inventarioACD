@@ -15,26 +15,78 @@
     </ion-row>
 
     <!-- Aquí van los datos de los proveedores -->
-    <ion-row>
-      <ion-col size="2" class="ion-text-center">1</ion-col>
-      <ion-col size="3" class="ion-text-center">Proveedor A</ion-col>
-      <ion-col size="3" class="ion-text-center">proveedora&#64;email.com</ion-col>
-      <ion-col size="2" class="ion-text-center">(123) 456-7890</ion-col>
-      <ion-col size="2" class="ion-text-center">Calle Ficticia 123</ion-col>
+    <ion-row *ngFor="let proveedor of proveedores">
+      <ion-col size="2" class="ion-text-center">{{proveedor.id}}</ion-col>
+      <ion-col size="3" class="ion-text-center">{{proveedor.nombre}}</ion-col>
+      <ion-col size="3" class="ion-text-center">{{proveedor.email}}</ion-col>
+      <ion-col size="2" class="ion-text-center">{{proveedor.telefono}}</ion-col>
+      <ion-col size="2" class="ion-text-center">{{proveedor.direccion}}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="2" class="ion-text-center">2</ion-col>
-      <ion-col size="3" class="ion-text-center">Proveedor B</ion-col>
-      <ion-col size="3" class="ion-text-center">proveedorb&#64;email.com</ion-col>
-      <ion-col size="2" class="ion-text-center">(098) 765-4321</ion-col>
-      <ion-col size="2" class="ion-text-center">Avenida Central 456</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="2" class="ion-text-center">3</ion-col>
-      <ion-col size="3" class="ion-text-center">Proveedor C</ion-col>
-      <ion-col size="3" class="ion-text-center">proveedorc&#64;email.com</ion-col>
-      <ion-col size="2" class="ion-text-center">(555) 123-9876</ion-col>
-      <ion-col size="2" class="ion-text-center">Ruta 56, km 7</ion-col>
-    </ion-row>
+
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Agregar un proveedor nuevo</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <form (ngSubmit)="anyadirProveedor()">
+            <ion-item>
+              <ion-input
+                name="nombre"
+                label="Introduce el nombre"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="Nombre"
+                [(ngModel)]="proveedorNuevo.nombre"
+                [ngModelOptions]="{standalone: true}"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                name="email"
+                label="Introduce el email"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="Email"
+                [(ngModel)]="proveedorNuevo.email"
+                [ngModelOptions]="{standalone: true}"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                name="contrasena"
+                label="Introduce el teléfono"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="contraseña"
+                [(ngModel)]="proveedorNuevo.telefono"
+                [ngModelOptions]="{standalone: true}"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                name="rol"
+                label="Introduce la dirección"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="rol"
+                [(ngModel)]="proveedorNuevo.direccion"
+                [ngModelOptions]="{standalone: true}"
+              ></ion-input>
+            </ion-item>
+            <ion-button type="submit" expand="block">Añadir</ion-button>
+          </form>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
   </ion-grid>
 </ion-content>

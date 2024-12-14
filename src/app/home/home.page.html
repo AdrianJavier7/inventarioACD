@@ -7,9 +7,9 @@
 
     <ion-card-content>
       <ion-label>Introduce tu correo electrónico</ion-label>
-      <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Introduce tu email"></ion-input>
+      <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Introduce tu email" [(ngModel)]="login.email"></ion-input>
       <ion-label>Introduce tu contraseña</ion-label>
-      <ion-input label="Contraseña" label-placement="floating" fill="outline" placeholder="Introduce tu contraseña"></ion-input>
+      <ion-input label="Contraseña" label-placement="floating" fill="outline" placeholder="Introduce tu contraseña" [(ngModel)]="login.contrasena"></ion-input>
       <ion-button routerLink="/productos">Entrar</ion-button>
       <ion-button>Registrarse</ion-button>
     </ion-card-content>

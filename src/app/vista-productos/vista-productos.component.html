@@ -14,53 +14,14 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" size-md="4" size-lg="3">
-        <div class="producto">
-          <img alt="Producto 1" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h3>Producto 1</h3>
-          <p>Descripción breve del producto</p>
+        <div class="producto" *ngFor="let producto of productos">
+          <img alt="Producto 1" src="{{producto.imagen}}}" />
+          <h3> {{producto.nombre}}</h3>
+          <p>{{producto.descripcion}}</p>
+          <p>{{producto.precio}}</p>
+          <p>{{producto.categoria}}</p>
+          <p>{{producto.proveedor}}</p>
         </div>
-      </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3">
-        <div class="producto">
-          <img alt="Producto 2" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h3>Producto 2</h3>
-          <p>Descripción breve del producto</p>
-        </div>
-      </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3">
-        <div class="producto">
-          <img alt="Producto 3" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h3>Producto 3</h3>
-          <p>Descripción breve del producto</p>
-        </div>
-      </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3">
-        <div class="producto">
-          <img alt="Producto 4" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h3>Producto 4</h3>
-          <p>Descripción breve del producto</p>
-        </div>
-      </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3">
-        <div class="producto">
-          <img alt="Producto 5" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h3>Producto 5</h3>
-          <p>Descripción breve del producto</p>
-        </div>
-      </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3">
-        <div class="producto">
-          <img alt="Producto 6" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h3>Producto 6</h3>
-          <p>Descripción breve del producto</p>
-        </div>
-      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
