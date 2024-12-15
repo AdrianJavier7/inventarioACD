@@ -5,10 +5,19 @@
 
   <ion-grid>
     <ion-col>
-      <ion-input label="Buscar por nombre" placeholder="Nombre"></ion-input>
-      <ion-input label="Filtrar por categoría" placeholder="Categoría"></ion-input>
-      <ion-input label="Filtrar por proveedor" placeholder="Proveedor"></ion-input>
-      <ion-button>Añadir producto</ion-button>
+      <ion-row>
+        <ion-input class="bonito" [(ngModel)]="porNombre" label="Buscar por nombre" placeholder="Nombre"></ion-input>
+        <ion-button (click)="buscarProducto()" class="botonFiltro bonito">Buscar</ion-button>
+      </ion-row>
+      <ion-row>
+        <ion-input class="bonito" [(ngModel)]="porCategoria" label="Filtrar por categoría" placeholder="Categoría"></ion-input>
+        <ion-button class="botonFiltro bonito" (click)="buscarCategoria()">Filtrar C</ion-button>
+      </ion-row>
+      <ion-row>
+        <ion-input class="bonito" [(ngModel)]="porProveedor" label="Filtrar por proveedor" placeholder="Proveedor"></ion-input>
+        <ion-button class="botonFiltro bonito" (click)="buscarProveedor()">Filtrar P</ion-button>
+      </ion-row>
+      <ion-button id="open-modal" class="bonito">Añadir producto</ion-button>
     </ion-col>
   </ion-grid>
 
@@ -18,11 +27,111 @@
           <img alt="Producto 1" src="{{producto.imagen}}}" />
           <h3> {{producto.nombre}}</h3>
           <p>{{producto.descripcion}}</p>
-          <p>{{producto.precio}}</p>
+          <p>{{producto.cantidad}} unidades</p>
+          <p>{{producto.precio}}€</p>
           <p>{{producto.categoria}}</p>
           <p>{{producto.proveedor}}</p>
         </div>
     </ion-row>
   </ion-grid>
+
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Agregar un producto nuevo</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form (ngSubmit)="anyadirProducto()">
+          <ion-item>
+            <ion-input
+              name="nombre"
+              label="Introduce el nombre"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Nombre"
+              [(ngModel)]="productoNuevo.nombre"
+              [ngModelOptions]="{standalone: true}"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              name="cantidad"
+              label="Introduce la cantidad"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Cantidad"
+              [(ngModel)]="productoNuevo.cantidad"
+              [ngModelOptions]="{standalone: true}"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              name="precio"
+              label="Introduce el precio"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Precio"
+              [(ngModel)]="productoNuevo.precio"
+              [ngModelOptions]="{standalone: true}"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              name="rol"
+              label="Introduce la descripción"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Descripción"
+              [(ngModel)]="productoNuevo.descripcion"
+              [ngModelOptions]="{standalone: true}"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              name="rol"
+              label="Introduce la URL de la imagen"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Imagen"
+              [(ngModel)]="productoNuevo.imagen"
+              [ngModelOptions]="{standalone: true}"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              name="rol"
+              label="Introduce la categoría"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Categoría"
+              [(ngModel)]="productoNuevo.categoria"
+              [ngModelOptions]="{standalone: true}"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              name="rol"
+              label="Introduce el proveedor"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Proveedor"
+              [(ngModel)]="productoNuevo.proveedor"
+              [ngModelOptions]="{standalone: true}"
+            ></ion-input>
+          </ion-item>
+          <ion-button type="submit" expand="block">Añadir</ion-button>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
 </ion-content>
 

@@ -22,5 +22,5 @@ export const routes: Routes = [
   {
     path:'proveedores',
     loadComponent: () => import('./vista-proveedores/vista-proveedores.component').then((m) => m.VistaProveedoresComponent)
-  }
+  },
 ];

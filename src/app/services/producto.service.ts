@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Producto} from "../modelos/Producto";
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +10,19 @@ export class ProductoService {
   constructor(private httpClient: HttpClient) { }
 
   getProductos(){
-    return this.httpClient.get<any>("/api/productos/todos");
+    return this.httpClient.get<any>("/api/productos/todosDTO");
   }
 
-  anyadirProducto(producto:any){
-    return this.httpClient.post<any>("/api/productos/guardar", producto);
+  anyadirProducto(producto:Producto){
+    return this.httpClient.post<any>("/api/productos/guardarDTO", producto);
   }
 
   getProductoNombre(nombre:string){
-    return this.httpClient.get<any>("/api/productos/nombre/"+nombre);
+    return this.httpClient.get<any>("/api/productos/nombreDTO/"+nombre);
   }
 
-  getProductosProveedorId(id:number){
-    return this.httpClient.get<any>("/api/productos/proveedorDTO/"+id);
+  getProductosProveedorId(nombre:string){
+    return this.httpClient.get<any>("/api/productos/proveedorDTO/"+nombre);
   }
 
   getProductosCategoriaNombre(nombre:string){

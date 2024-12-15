@@ -2,9 +2,8 @@
 
 <ion-content>
   <ion-title style="text-align: center; margin-top: 20px; margin-bottom: 30px">Proveedores</ion-title>
-  <ion-button class="centrar">Agregar un proveedor</ion-button>
+  <ion-button class="centrar" id="open-modal">Agregar un proveedor</ion-button>
 
-  <!-- Tabla de Proveedores usando ion-grid -->
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col size="2" class="ion-text-center"><strong>ID</strong></ion-col>
@@ -14,7 +13,6 @@
       <ion-col size="2" class="ion-text-center"><strong>Dirección</strong></ion-col>
     </ion-row>
 
-    <!-- Aquí van los datos de los proveedores -->
     <ion-row *ngFor="let proveedor of proveedores">
       <ion-col size="2" class="ion-text-center">{{proveedor.id}}</ion-col>
       <ion-col size="3" class="ion-text-center">{{proveedor.nombre}}</ion-col>

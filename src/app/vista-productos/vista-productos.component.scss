@@ -1,97 +1,91 @@
-/* Estilo general para el contenido */
+
 ion-content {
   padding: 20px;
+  background-color: #181818;
+  color: #fff;
 }
 
-/* Estilo de la grid para los inputs y el botón */
-ion-grid {
+ion-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+ion-grid.filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   margin-bottom: 30px;
 }
 
-ion-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-ion-input {
-  width: 100%;
+.bonito {
+  --background: #3b5ca7;
+  --border-radius: 5px;
+  --color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 ion-button {
-  background-color: #3b5ca7;
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-ion-button:hover {
-  background-color: #2a4f8f;
-}
-
-/* Estilos de los productos */
-.producto {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 10px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s;
+}
+
+
+
+.producto {
+  background-color: #262424;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .producto img {
   max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  max-height: 200px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .producto h3 {
-  font-size: 18px;
-  color: #333;
+  color: #e0e0e0;
   margin: 10px 0;
-  font-weight: 600;
 }
 
 .producto p {
   font-size: 14px;
-  color: #666;
+  color: #b0b0b0;
   margin: 5px 0;
 }
 
-/* Responsive design */
-@media (min-width: 576px) {
-  ion-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+
+ion-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-@media (min-width: 768px) {
-  ion-row {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 768px) {
+  ion-grid.filtros {
+    grid-template-columns: 1fr;
+  }
+
+  ion-input,
+  ion-button {
+    width: 100%;
   }
 }
-
-@media (min-width: 1024px) {
-  ion-row {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-

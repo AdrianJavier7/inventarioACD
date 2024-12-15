@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Login} from "../modelos/Login";
 import {Usuario} from "../modelos/Usuario";
+import {tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export class UsuarioService {
 
   constructor(private httpClient : HttpClient) { }
 
-  getUsuario(login:Login){
-    return this.httpClient.post<any>("/api/usuarios/login)", {"body" : login});
+  authenticate(login:Login){
+    return this.httpClient.post<any>("/api/usuarios/login", login);
   }
 
   getUsuarios(){
@@ -20,5 +21,9 @@ export class UsuarioService {
 
   anyadirUsuario(usuario:Usuario){
     return this.httpClient.post<any>("/api/usuarios/guardar", usuario);
+  }
+
+  getRole(): string {
+    return localStorage.getItem('role') || '';
   }
 }
