@@ -1,5 +1,5 @@
 export class Proveedor{
-  id:number = 0;
+  id!:number;
   nombre?:string;
   email?:string;
   telefono?:string;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
 import { Login } from "../modelos/Login";
 import { firstValueFrom } from 'rxjs';
@@ -12,7 +12,7 @@ import {CommonModule} from "@angular/common"; // Manejo de observables con prome
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule, CommonModule],
+  imports: [IonicModule, FormsModule, CommonModule, RouterModule],
 })
 export class HomePage {
   login: Login = new Login();

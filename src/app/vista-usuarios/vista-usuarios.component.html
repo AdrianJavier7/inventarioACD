@@ -2,9 +2,8 @@
 
 <ion-content>
   <ion-title style="text-align: center; margin-top: 20px; margin-bottom: 30px">Usuarios</ion-title>
-  <ion-button class="centrar" id="open-modal">Agregar un usuario</ion-button>
+  <ion-button class="centrar" id="open-modal2">Agregar un usuario</ion-button>
 
-  <!-- Tabla de Usuarios usando ion-grid -->
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col size="2" class="ion-text-center"><strong>ID</strong></ion-col>
@@ -14,7 +13,6 @@
       <ion-col size="2" class="ion-text-center"><strong>Rol</strong></ion-col>
     </ion-row>
 
-    <!-- Aquí van los datos de los usuarios -->
     <ion-row *ngFor="let usuario of usuarios">
       <ion-col size="2" class="ion-text-center">{{usuario.id}}</ion-col>
       <ion-col size="3" class="ion-text-center">{{usuario.nombre}}</ion-col>
@@ -24,7 +22,7 @@
       <ion-button (click)="eliminarUsuario(usuario.id)" color="danger">Eliminar</ion-button>
     </ion-row>
 
-  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <ion-modal trigger="open-modal2" (willDismiss)="onWillDismiss($event)">
     <ng-template>
       <ion-header>
         <ion-toolbar>

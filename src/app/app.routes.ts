@@ -23,4 +23,8 @@ export const routes: Routes = [
     path:'proveedores',
     loadComponent: () => import('./vista-proveedores/vista-proveedores.component').then((m) => m.VistaProveedoresComponent)
   },
+  {
+    path: 'registro',
+    loadComponent: () => import('./registro/registro.component').then((m) => m.RegistroComponent)
+  }
 ];

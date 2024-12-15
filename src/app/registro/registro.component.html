@@ -2,18 +2,33 @@
   <ion-card class="carta">
     <ion-card-header>
       <ion-card-title class="centrar">Bienvenido al inventario</ion-card-title>
-      <ion-card-subtitle class="centrar">Inventario</ion-card-subtitle>
+      <ion-card-subtitle class="centrar">Registro</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+      <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+        <ion-label>Introduce tu nombre</ion-label>
+        <ion-input
+          label="Nombre"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Introduce tu nombre"
+          [(ngModel)]="registro.nombre"
+          name="nombre"
+          required
+          #nombre="ngModel">
+        </ion-input>
+        <div *ngIf="nombre.invalid && nombre.touched" class="error-message">
+          El nombre es obligatorio
+        </div>
+
         <ion-label>Introduce tu correo electrónico</ion-label>
         <ion-input
           label="Email"
           label-placement="floating"
           fill="outline"
           placeholder="Introduce tu email"
-          [(ngModel)]="login.email"
+          [(ngModel)]="registro.email"
           name="email"
           required
           #email="ngModel">
@@ -28,7 +43,7 @@
           label-placement="floating"
           fill="outline"
           placeholder="Introduce tu contraseña"
-          [(ngModel)]="login.contrasena"
+          [(ngModel)]="registro.contrasena"
           type="password"
           name="contrasena"
           required
@@ -38,8 +53,8 @@
           La contraseña es obligatoria
         </div>
 
-        <ion-button type="submit" [disabled]="loginForm.invalid">Entrar</ion-button>
-        <ion-button routerLink="/registro">Registrarse</ion-button>
+        <ion-button type="submit" [disabled]="registerForm.invalid">Registrarse</ion-button>
+        <ion-button routerLink="/home">Ya tengo cuenta</ion-button>
 
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
       </form>
