@@ -28,4 +28,8 @@ export class ProductoService {
   getProductosCategoriaNombre(nombre:string){
     return this.httpClient.get<any>("/api/productos/categoria/"+nombre);
   }
+
+  eliminarProducto(id:number){
+    return this.httpClient.delete<any>("/api/productos/eliminar/"+id);
+  }
 }

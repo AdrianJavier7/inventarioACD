@@ -23,7 +23,7 @@ export class UsuarioService {
     return this.httpClient.post<any>("/api/usuarios/guardar", usuario);
   }
 
-  getRole(): string {
-    return localStorage.getItem('role') || '';
+  eliminarUsuario(id:number){
+    return this.httpClient.delete<any>("/api/usuarios/eliminar/"+id);
   }
 }

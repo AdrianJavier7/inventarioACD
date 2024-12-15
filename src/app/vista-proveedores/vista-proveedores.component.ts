@@ -66,6 +66,16 @@ export class VistaProveedoresComponent  implements OnInit {
     });
   }
 
+  eliminarProveedor(id: number): void {
+    this.proveedorService.eliminarProveedor(id).subscribe({
+      next: (data: Proveedor) => {
+        console.info('Proveedor eliminado', data);
+      },
+      error: (error: any) => console.error('Error: ', error),
+      complete: () => console.log('Petición completada')
+    });
+  }
+
   ngOnInit() {
     this.getProveedores();
   }

@@ -46,7 +46,7 @@ export class VistaProductosComponent  implements OnInit {
 
   getProductos(): void {
     this.productoService.getProductos().subscribe({
-      next: (data: Proveedor[]) => {
+      next: (data: Producto[]) => {
         console.info('Hola soy la lista de productos', data);
         this.productos = data;
       },
@@ -101,6 +101,17 @@ export class VistaProductosComponent  implements OnInit {
     this.productoService.anyadirProducto(this.productoNuevo).subscribe({
       next: (data: Producto) => {
         console.info('Hola soy el producto', data);
+        this.getProductos();
+      },
+      error: (error: any) => console.error('Error: ', error),
+      complete: () => console.log('Petición completada')
+    });
+  }
+
+  eliminarProducto(id: number): void {
+    this.productoService.eliminarProducto(id).subscribe({
+      next: (data: any) => {
+        console.info('Producto eliminado', data);
         this.getProductos();
       },
       error: (error: any) => console.error('Error: ', error),

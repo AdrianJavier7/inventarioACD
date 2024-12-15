@@ -21,6 +21,7 @@
       <ion-col size="3" class="ion-text-center">{{usuario.email}}</ion-col>
       <ion-col size="2" class="ion-text-center">{{usuario.contrasena}}</ion-col>
       <ion-col size="2" class="ion-text-center">{{usuario.rol}}</ion-col>
+      <ion-button (click)="eliminarUsuario(usuario.id)" color="danger">Eliminar</ion-button>
     </ion-row>
 
   <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">

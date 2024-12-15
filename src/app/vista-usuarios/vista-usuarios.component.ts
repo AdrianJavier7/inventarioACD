@@ -16,12 +16,7 @@ import {UsuarioService} from "../services/usuario.service";
 })
 export class VistaUsuariosComponent  implements OnInit {
 
-  usuarioNuevo = {
-    nombre: '',
-    email: '',
-    contrasena: '',
-    rol: ''
-  };
+  usuarioNuevo : Usuario = new Usuario();
 
   @ViewChild(IonModal) modal: IonModal = {} as IonModal;
   name?: string;
@@ -63,8 +58,20 @@ export class VistaUsuariosComponent  implements OnInit {
     });
   }
 
+  eliminarUsuario(id: number): void {
+    this.usuarioService.eliminarUsuario(id).subscribe({
+      next: (data: Usuario) => {
+        console.info('Usuario eliminado', data);
+      },
+      error: (error: any) => console.error('Error: ', error),
+      complete: () => console.log('Petición completada')
+    });
+  }
+
   ngOnInit() {
     this.getUsuarios();
   }
+
+
 
 }

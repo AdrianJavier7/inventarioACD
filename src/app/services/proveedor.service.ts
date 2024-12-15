@@ -15,4 +15,8 @@ export class ProveedorService {
   anyadirProveedor(proveedor:any){
     return this.httpClient.post<any>("/api/proveedores/guardar", proveedor);
   }
+
+  eliminarProveedor(id:number){
+    return this.httpClient.delete<any>("/api/proveedores/eliminar/"+id);
+  }
 }
